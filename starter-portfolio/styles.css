@@ -139,6 +139,81 @@ dd {
     margin: 0;
 }
 
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-left: 2px solid var(--line);
+}
+
+ol li {
+    padding: 0.9rem 0 0.9rem 1.1rem;
+    border-bottom: 1px solid var(--line);
+}
+
+ol li p {
+    max-width: 68ch;
+    margin: 0.3rem 0;
+}
+
+.tags {
+    color: var(--mut);
+    font-size: 0.9rem;
+}
+
+.st {
+    margin-left: 0.4rem;
+    padding: 0 0.4rem;
+    border: 1px solid var(--line);
+    color: var(--mut);
+    font-size: 0.85rem;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.st.next {
+    border-color: var(--ok);
+    color: var(--ok);
+}
+
+progress {
+    display: block;
+    width: 100%;
+    height: 0.75rem;
+
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+
+    background: var(--bg);
+    color: var(--ok);
+
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+/* Chromium, Safari et autres navigateurs WebKit */
+progress::-webkit-progress-bar {
+    border-radius: 999px;
+    background: var(--line);
+}
+
+progress::-webkit-progress-value {
+    border-radius: 999px;
+    background: var(--ok);
+}
+
+/* Firefox */
+progress::-moz-progress-bar {
+    border-radius: 999px;
+    background: var(--ok);
+}
+
+/* Focus visible si la barre est rendue interactive ou focalisable */
+progress:focus-visible {
+    outline: 2px solid var(--acc);
+    outline-offset: 3px;
+}
 
 /* --------------------------------------------------------------------------
    5. INTERACTIONS
