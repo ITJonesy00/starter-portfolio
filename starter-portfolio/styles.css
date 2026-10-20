@@ -322,7 +322,7 @@ a:focus-visible {
 }
 
 /* Focus clavier visible */
-#theme:focus-visible + .toggle {
+#theme-light:focus-visible + .toggle {
     outline: 2px solid var(--acc);
     outline-offset: 3px;
 }
