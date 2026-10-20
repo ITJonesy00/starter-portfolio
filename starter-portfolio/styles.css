@@ -78,6 +78,24 @@
   2. BASE AND LAYOUT
    -------------------------------------------------------------------------- */
 
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+main {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 4rem;
+}
+
 
 /* --------------------------------------------------------------------------
    3. TYPOGRAPHY
