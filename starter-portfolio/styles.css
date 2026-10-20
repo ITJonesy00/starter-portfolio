@@ -192,7 +192,7 @@ progress {
     -webkit-appearance: none;
 }
 
-/* Chromium, Safari et autres navigateurs WebKit */
+/* WebKit */
 progress::-webkit-progress-bar {
     border-radius: 999px;
     background: var(--line);
@@ -209,7 +209,7 @@ progress::-moz-progress-bar {
     background: var(--ok);
 }
 
-/* Focus visible si la barre est rendue interactive ou focalisable */
+/* Focus */
 progress:focus-visible {
     outline: 2px solid var(--acc);
     outline-offset: 3px;
