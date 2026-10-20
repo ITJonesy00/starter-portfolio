@@ -176,6 +176,7 @@ ol li p {
     color: var(--ok);
 }
 
+/*progress indicator*/
 progress {
     display: block;
     width: 100%;
@@ -219,7 +220,45 @@ progress:focus-visible {
    5. INTERACTIONS
    -------------------------------------------------------------------------- */
 
+.contacts {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
 /*links*/
+a {
+    color: var(--acc);
+    text-underline-offset: 0.2em;
+}
+
+a:focus-visible {
+    outline: 2px solid var(--fg);
+    outline-offset: 3px;
+}
+
+/*mouvement cursor*/
+.cur {
+    display: inline-block;
+    width: 0.6rem;
+    height: 1.1rem;
+    background: var(--fg);
+    vertical-align: text-bottom;
+    animation: b 1.1s steps(1) infinite;
+}
+
+@keyframes b {
+    50% {
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cur {
+        animation: none;
+    }
+}
 
 /* --------------------------------------------------------------------------
    6. MOTION
