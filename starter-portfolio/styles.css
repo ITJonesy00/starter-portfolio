@@ -330,3 +330,16 @@ a:focus-visible {
    7. RESPONSIVE
    -------------------------------------------------------------------------- */
 
+@media (max-width: 30rem) {
+    dl {
+        grid-template-columns: 1fr;
+    }
+
+    dd {
+        margin-bottom: 0.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
