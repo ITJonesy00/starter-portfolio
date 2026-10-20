@@ -15,6 +15,25 @@
    1. THEME
    -------------------------------------------------------------------------- */
 /* root */
+:root {
+    color-scheme: dark;
+
+    --bg: #12161b;
+    --fg: #d9e0e6;
+    --mut: #93a0ab;
+    --acc: #e3b05a;
+    --ok: #7fcf9a;
+    --line: #2a323b;
+
+    font-family:
+            ui-monospace,
+            "SF Mono",
+            Menlo,
+            Consolas,
+            "DejaVu Sans Mono",
+            monospace;
+}
+
 /* system theme */
 
 
@@ -22,17 +41,60 @@
   2. BASE AND LAYOUT
    -------------------------------------------------------------------------- */
 
+
 /* --------------------------------------------------------------------------
    3. TYPOGRAPHY
    -------------------------------------------------------------------------- */
+h1 {
+    margin: 0.5rem 0 0.25rem;
+    font-size: 2.4rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
 
+h2 {
+    margin: 0;
+    color: var(--acc);
+    font-size: 1.05rem;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
 
-/* grid */
+.sub {
+    margin: 0 0 1.5rem;
+    color: var(--mut);
+}
+
+.p {
+    margin: 2.5rem 0 0.75rem;
+    color: var(--mut);
+}
+
+.u {
+    color: var(--ok);
+}
+
 
 /* --------------------------------------------------------------------------
    4. COMPONENTS (list, progress bar)
    -------------------------------------------------------------------------- */
 
+
+/*grid*/
+dl {
+    display: grid;
+    grid-template-columns: 7rem 1fr;
+    gap: 0.25rem 1rem;
+    margin: 0;
+}
+
+dt {
+    color: var(--mut);
+}
+
+dd {
+    margin: 0;
+}
 
 
 /* --------------------------------------------------------------------------
