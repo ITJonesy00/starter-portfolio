@@ -1,0 +1,59 @@
+# Simple workflow for deploying static content to GitHub Pages
+name: Run pipeline a Deploy stable release to Pages
+
+env:
+  SITE_DIR: "portfolio"
+  VERSION: ${{ github.event.inputs.version || github.ref_name }}
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+       #inputs:
+          # version:
+             # description: Write version in version.json file
+             # default: main
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages" # production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: startsWith(github.ref, 'refs/tags/')
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: 1- Checkout
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: 2- Setup Pages
+        uses: actions/configure-pages@v6
+      - name: Write version.json
+        run: |
+          jq -n --arg v "$VERSION" '{version: $v}' > "$SITE_DIR/version.json"
+      - name: 3- Upload artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          # Upload entire repository
+          path: ${{ env.SITE_DIR }}
+      - name: 4- Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
+      - name: 5- Display deployed version
+        run: 'echo "Stable Version Portfolio: $VERSION"'

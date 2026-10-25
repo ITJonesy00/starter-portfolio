@@ -1,0 +1,25 @@
+# Simple workflow for verifying static content.
+name: Run pipeline dev
+
+on:
+  push:
+    branches: [develop]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  SITE_DIR: "portfolio"
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: index.html is here 🆗️
+        run: test -f "$SITE_DIR/index.html"
+      - name: JavaScript syntax
+        run: find "$SITE_DIR" -name '*.js' -print0 | xargs -0 -r -n1 node --check
