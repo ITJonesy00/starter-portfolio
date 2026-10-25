@@ -34,3 +34,9 @@ The pipeline is deliberately minimal: check, build, tag, publish to GitHub Pages
 **Rollback**: Actions → Deploy → Run workflow, then pick the old tag under "Use workflow from".
 
 **Accepted limit**: testing happens on the build, not on real infrastructure. For a larger site, the best practice is a **dedicated staging infrastructure** mirroring production, to validate the actual deployment before release. The structure above stays the same: you add a deployment step to that environment between `test` and production.
+
+---
+## Next steps (when the stack grows)
+- Post-deploy smoke test (check the live `version.json` matches the tag)
+- Verify the tag points to a commit on `main`
+- Pin GitHub Actions to commit SHAs (Dependabot keeps them updated)
