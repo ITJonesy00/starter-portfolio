@@ -1,5 +1,11 @@
 # STARTER-PORTFOLIO
 
+This repo presents an evolving platform for IT project.
+
+The project will grow through fonctionnal increments.
+
+No school exercice. Every repo is realistic.
+
 [![Release](https://img.shields.io/github/v/release/itjonesy00/starter-portfolio?style=flat-square)](https://github.com/itjonesy00/starter-portfolio/releases/latest) [![Deploy](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fitjonesy00.github.io%2Fstarter-portfolio%2Fversion.json&query=%24.version&label=deployed&style=flat-square)](https://itjonesy00.github.io/starter-portfolio)
 
 
@@ -66,4 +72,5 @@ All rights reserved. This repository is published for viewing only. Reuse, modif
 
 > ITJonesy00 - 2026
 
+>>>>>>> 643664a7aacca26ab360ec5d3b711ebb2141420f
 
